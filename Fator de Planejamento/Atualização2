@@ -8,7 +8,7 @@ Pasta = Planilha1.Range("A2").Text
 Pasta2 = Planilha1.Range("A12").Text
 DataPlan = Planilha1.Range("A13").Text
 
-    Workbooks.Open Filename:="G:\Rio Verde\InformaÁıes Gerais\PCM\IDM's\Fator de Planejamento.xlsm", writerespassword:="112029", ignorereadonlyrecommended:=True
+    Workbooks.Open Filename:="G:\Rio Verde\Informa√ß√µes Gerais\PCM\IDM's\Fator de Planejamento.xlsm", writerespassword:="112029", ignorereadonlyrecommended:=True
 
 
 'LIMPAR DADOS E COPIAR CPM
@@ -32,10 +32,10 @@ DataPlan = Planilha1.Range("A13").Text
 'SET SAP
         
         
-        Set SapGuiAuto = GetObject("SAPGUI")          'Utiliza o objeto da interface gr·fica do SAP
-        Set SAPApp = SapGuiAuto.GetScriptingEngine    'Conecta ao SAP que est· rodando no momento
-        Set SAPCon = SAPApp.Children(0)               'Encontra o primeiro sistema que est· conectado
-        Set session = SAPCon.Children(0)              'Encontra a primeira sess„o (janela) dessa conex„o
+        Set SapGuiAuto = GetObject("SAPGUI")          'Utiliza o objeto da interface gr√°fica do SAP
+        Set SAPApp = SapGuiAuto.GetScriptingEngine    'Conecta ao SAP que est√° rodando no momento
+        Set SAPCon = SAPApp.Children(0)               'Encontra o primeiro sistema que est√° conectado
+        Set session = SAPCon.Children(0)              'Encontra a primeira sess√£o (janela) dessa conex√£o
 
 
 'CODIGO SAP
@@ -74,7 +74,7 @@ session.findById("wnd[0]/mbar/menu[0]/menu[11]/menu[2]").Select
 session.findById("wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[1,0]").Select
 session.findById("wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[1,0]").SetFocus
 session.findById("wnd[1]/tbar[0]/btn[0]").press
-session.findById("wnd[1]/usr/ctxtDY_PATH").Text = "G:\Rio Verde\Gerencia ManutenÁ„o\ManutenÁ„o PCM\tmp 2\2022\" & Pasta
+session.findById("wnd[1]/usr/ctxtDY_PATH").Text = "G:\Rio Verde\Gerencia Manuten√ß√£o\Manuten√ß√£o PCM\tmp 2\2022\" & Pasta
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").Text = "IW38 - FPL.xls"
 session.findById("wnd[1]/tbar[0]/btn[11]").press
 session.findById("wnd[0]").sendVKey 12
@@ -84,7 +84,7 @@ session.findById("wnd[0]").sendVKey 12
 'ABRE PLANILHA EXPORTADA
 
 
-    Workbooks.Open Filename:="G:\Rio Verde\Gerencia ManutenÁ„o\ManutenÁ„o PCM\tmp 2\2022\" & Pasta & "\IW38 - FPL.xls", ignorereadonlyrecommended:=True
+    Workbooks.Open Filename:="G:\Rio Verde\Gerencia Manuten√ß√£o\Manuten√ß√£o PCM\tmp 2\2022\" & Pasta & "\IW38 - FPL.xls", ignorereadonlyrecommended:=True
     
         Windows("IW38 - FPL.xls").Activate
 
@@ -107,7 +107,7 @@ session.findById("wnd[0]").sendVKey 12
 'VOLTA PRA PLANILHA INICIAL E COLA
 
 
-    Workbooks.Open Filename:="G:\Rio Verde\Gerencia ManutenÁ„o\ManutenÁ„o PCM\tmp 2\2022\" & Pasta & "\IW38 - FPL.xls", ignorereadonlyrecommended:=True
+    Workbooks.Open Filename:="G:\Rio Verde\Gerencia Manuten√ß√£o\Manuten√ß√£o PCM\tmp 2\2022\" & Pasta & "\IW38 - FPL.xls", ignorereadonlyrecommended:=True
 
         Windows("Fator de Planejamento.xlsm").Activate
             Sheets("IW38").Select
@@ -134,7 +134,7 @@ VlinhaIW38 = Range("D3").End(xlDown).Row    'CONTAGEM DE LINHAS
 
 'COLAR IW38 NO CONTROLE FLP
 
-    Workbooks.Open Filename:="G:\Rio Verde\Gerencia ManutenÁ„o\ManutenÁ„o PCM\tmp 2\2022\" & Pasta2 & "\Controle FPL.xlsx", ignorereadonlyrecommended:=True
+    Workbooks.Open Filename:="G:\Rio Verde\Gerencia Manuten√ß√£o\Manuten√ß√£o PCM\tmp 2\2022\" & Pasta2 & "\Controle FPL.xlsx", ignorereadonlyrecommended:=True
 
         Windows("Controle FPL.xlsx").Activate
  
